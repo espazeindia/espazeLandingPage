@@ -4,6 +4,20 @@
   --background: #ffffff;
   --foreground: #171717;
   --spacing: 0.25rem;
+  /* Espaze brand palette */
+  --espaze-primary: #4110a2; /* Primary / Dominant */
+  --espaze-mid: #7e50da; /* Primary (mid / gradient) */
+  --espaze-accent: #8c52ff; /* Accent / Bright */
+  --espaze-light: #b898fa; /* Light accent / neutral */
+  --espaze-chart1: #b974f4;
+  --espaze-chart2: #fd5934;
+  --espaze-chart3: #f59e0b;
+  --espaze-chart4: #0891b2;
+  --espaze-bg: #ffffff;
+  --espaze-text-dark: #111827;
+  --espaze-border: #e5e7eb;
+  /* compatibility: single espaze purple variable (primary) */
+  --espaze-purple: var(--espaze-primary);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,4 +36,88 @@ body {
 .px-6 {
   padding-inline: calc(var(--spacing) * 6);
   padding-block: 2rem;
+}
+
+/* helper vertical padding classes using the project's --spacing variable
+   - Tailwind's py-20 = 5rem  -> calc(var(--spacing) * 20) (0.25rem * 20 = 5rem)
+   - Tailwind's md:py-28 = 7rem -> calc(var(--spacing) * 28)
+*/
+/* Put custom utility classes into Tailwind's utilities layer so they don't get
+   overridden by generated utilities. This also allows Tailwind to include them
+   in the correct order and respect responsive breakpoints via @screen.
+*/
+@layer utilities {
+  .py-20 {
+    padding-block: calc(var(--spacing) * 20) !important;
+  }
+}
+
+/* Espaze utility color helpers using the single espaze purple variable */
+@layer utilities {
+  .bg-espaze {
+    background-color: var(--espaze-purple) !important;
+  }
+
+  .text-espaze {
+    color: var(--espaze-purple) !important;
+  }
+
+  .border-espaze {
+    border-color: var(--espaze-purple) !important;
+  }
+
+  .bg-espaze-soft {
+    /* light, airy background using the espaze purple at low opacity */
+    background: linear-gradient(to bottom right, rgba(126,80,218,0.08), rgba(140,82,255,0.06));
+  }
+
+  /* feature card hover border using the espaze color */
+  .feature-hover {
+    border-color: transparent;
+    transition: border-color 0.25s ease;
+  }
+
+  .group.feature:hover .feature-hover {
+    border-color: var(--espaze-purple);
+  }
+
+  /* Wider content container used on seller pages to reduce empty gutters
+     - Use a sensible max-width and increase at larger breakpoints. */
+  .container-wide {
+    max-width: 1100px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 1280px) {
+    .container-wide {
+      max-width: 1400px;
+    }
+  }
+
+  /* subtle dotted background for seller pages to reduce perceived empty space */
+  .seller-bg {
+    background-image: radial-gradient(rgba(65,16,162,0.02) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-repeat: repeat;
+  }
+
+  /* full-page espaze background with subtle texture for seller pages (darkened) */
+  .espaze-site-bg {
+    background: linear-gradient(180deg, var(--espaze-primary), var(--espaze-mid));
+    position: relative;
+    overflow: hidden;
+    /* subtle overlay texture */
+    background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(180deg, var(--espaze-primary), var(--espaze-mid));
+    background-size: 28px 28px, auto;
+    background-repeat: repeat, no-repeat;
+    color: var(--espaze-text-dark);
+  }
+
+  /* helper to tone down background behind white cards so they stand out */
+  .card-lift {
+    background: rgba(255,255,255,0.96);
+    box-shadow: 0 8px 30px rgba(2,6,23,0.12);
+    border-radius: 12px;
+  }
 }
