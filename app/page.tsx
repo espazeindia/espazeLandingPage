@@ -9,7 +9,7 @@ import Footer from "./components/common/footer";
 
 export default function Home() {
   return (
-    <div className="bg-white text-gray-900 font-sans">
+    <div className=" text-gray-900 font-sans">
       <Header />
 
       <div className="w-full space-y-16">
