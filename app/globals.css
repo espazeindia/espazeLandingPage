@@ -2,7 +2,14 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1F2937;
+  --primary: #8B50F8;
+  --primary-hover: #7A3FE0;
+  --secondary: #B874FC;
+  --accent: #C898FD;
+  --light-purple: #F3EAFF;
+  --lighter-purple: #F9F5FF;
+  --spacing: 4px;
 }
 
 @theme inline {
@@ -10,17 +17,145 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Custom purple color palette */
+  --color-purple-50: #F9F5FF;
+  --color-purple-100: #F3EAFF;
+  --color-purple-200: #E5D5FF;
+  --color-purple-300: #C898FD;
+  --color-purple-400: #B874FC;
+  --color-purple-500: #A560F9;
+  --color-purple-600: #8B50F8;
+  --color-purple-700: #7A3FE0;
+  --color-purple-800: #6832C7;
+  --color-purple-900: #5626A5;
+  
+  /* Custom indigo color palette (aligned with purple theme) */
+  --color-indigo-50: #F9F5FF;
+  --color-indigo-100: #F0E7FF;
+  --color-indigo-200: #E0D0FF;
+  --color-indigo-300: #C898FD;
+  --color-indigo-400: #B874FC;
+  --color-indigo-500: #A560F9;
+  --color-indigo-600: #8B50F8;
+  --color-indigo-700: #7A3FE0;
+  --color-indigo-800: #6832C7;
+  --color-indigo-900: #5626A5;
+  
+  /* Custom pink color palette (aligned with purple theme) */
+  --color-pink-50: #FDF4FF;
+  --color-pink-100: #FCE8FF;
+  --color-pink-200: #F9D1FF;
+  --color-pink-300: #F5A7FF;
+  --color-pink-400: #E86EFF;
+  --color-pink-500: #D947FF;
+  --color-pink-600: #C62EF5;
+  --color-pink-700: #A820D4;
+  --color-pink-800: #8A1BB0;
+  --color-pink-900: #6D1789;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Intersection observer trigger */
+.reveal {
+  opacity: 0;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+
+/* Gradient backgrounds */
+.gradient-purple {
+  background: linear-gradient(135deg, #8B50F8 0%, #B874FC 100%);
+}
+
+.gradient-purple-light {
+  background: linear-gradient(135deg, #F3EAFF 0%, #F9F5FF 100%);
 }
