@@ -1,36 +1,162 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Espaze Landing Page
 
-## Getting Started
+A modern, responsive landing page for Espaze - a smart warehousing and instant delivery platform.
 
-First, run the development server:
+## 🎨 Design Features
+
+- **Purple/Violet Theme**: Modern color scheme with purple gradients and accents
+- **Smooth Animations**: CSS-based animations with scroll-triggered reveals
+- **Parallax Effects**: Subtle parallax scrolling on hero section
+- **Responsive Design**: Mobile-first approach with breakpoints for all devices
+- **Interactive Elements**: Hover effects, smooth transitions, and dynamic components
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 16.0.0
+- **React**: 19.2.0
+- **Styling**: Tailwind CSS 4.0
+- **Icons**: Lucide React
+- **TypeScript**: Full type safety
+
+## 📁 Project Structure
+
+```
+espazeLandingPage/
+├── app/
+│   ├── page.tsx           # Main landing page composition
+│   ├── layout.tsx         # Root layout
+│   └── globals.css        # Global styles and animations
+├── components/
+│   ├── sections/          # Page sections
+│   │   ├── Header.tsx     # Navigation header with mobile menu
+│   │   ├── Hero.tsx       # Hero section with gradient background
+│   │   ├── Services.tsx   # Services showcase
+│   │   ├── Steps.tsx      # 3-step process timeline
+│   │   ├── BuyersSellers.tsx  # Benefits for both audiences
+│   │   ├── Products.tsx   # Product showcase
+│   │   └── Footer.tsx     # Footer with branding
+│   ├── ui/                # Reusable UI components
+│   │   ├── Button.tsx     # Custom button component
+│   │   ├── Card.tsx       # Card component with hover effects
+│   │   └── Container.tsx  # Max-width container wrapper
+│   └── animations/        # Animation utilities
+│       ├── ScrollReveal.tsx   # Intersection Observer wrapper
+│       └── useParallax.ts     # Parallax scroll hook
+└── component/
+    └── steps.tsx          # (Legacy - migrated to components/sections)
+```
+
+## 🚀 Getting Started
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 🎯 Key Sections
 
-To learn more about Next.js, take a look at the following resources:
+### Hero
+- Gradient purple background
+- Animated floating elements with parallax
+- Call-to-action buttons
+- Responsive typography
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Services
+- Service cards with icons
+- Placeholder areas for images
+- Hover animations
+- Scroll-triggered reveals
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### How It Works (3 Steps)
+- Timeline visualization
+- Alternating card layout
+- Feature checklist
+- Purple theme integration
 
-## Deploy on Vercel
+### Buyers & Sellers
+- Two-column benefit lists
+- Distinct styling for each audience
+- Placeholder image areas
+- Responsive grid layout
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Products
+- Product showcase cards
+- Navigation dots
+- Placeholder content areas
+- Interactive elements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 Color Palette
+
+- **Primary Purple**: `#7C3AED`
+- **Secondary Purple**: `#8B5CF6`
+- **Accent**: `#A78BFA`
+- **Light Purple**: `#EDE9FE`
+- **Background**: `#F3F4F6`
+- **Text**: `#1F2937`
+
+## ✨ Animation Features
+
+- **Fade In**: Elements fade in on scroll
+- **Slide In**: Left and right slide animations
+- **Scale In**: Gentle scale-up effect
+- **Float**: Continuous floating animation
+- **Parallax**: Scroll-based movement
+- **Hover Effects**: Smooth transitions on interactive elements
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+## 🔧 Customization
+
+### Changing Colors
+
+Update CSS variables in `app/globals.css`:
+
+```css
+:root {
+  --primary: #7C3AED;
+  --secondary: #8B5CF6;
+  /* ... */
+}
+```
+
+### Modifying Animations
+
+Edit animation keyframes in `app/globals.css` or adjust timing in component files.
+
+### Adding New Sections
+
+1. Create component in `components/sections/`
+2. Import and add to `app/page.tsx`
+3. Wrap with `ScrollReveal` for scroll animations
+
+## 📄 License
+
+Private project for Espaze.
+
+## 🤝 Contributing
+
+This is a proprietary project. For questions or contributions, please contact the development team.
+
+---
+
+Built with ❤️ using Next.js and Tailwind CSS
