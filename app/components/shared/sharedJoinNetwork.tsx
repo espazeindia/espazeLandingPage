@@ -16,7 +16,7 @@ interface GenericJoinNetworkProps {
 const GenericJoinNetwork = memo(({ data }: GenericJoinNetworkProps) => {
   return (
     <section className="max-w-7xl mx-auto px-6 py-16 md:py-24">
-      <div className="text-left bg-gradient-to-r from-purple-600 via-purple-700 to-pink-600 rounded-2xl p-12 text-white shadow-xl">
+      <div className="text-left bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600 rounded-2xl p-12 text-white shadow-xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           {data.heading}
         </h2>

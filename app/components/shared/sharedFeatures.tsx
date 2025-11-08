@@ -58,7 +58,7 @@ const GenericFeatures = memo(({ data }: GenericFeaturesProps) => {
         {/* Section Heading */}
         <div className="text-left mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-purple-700 to-pink-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-br from-purple-700 to-pink-500 bg-clip-text text-transparent">
               {data.heading}
             </span>
           </h2>

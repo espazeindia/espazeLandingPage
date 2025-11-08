@@ -36,7 +36,7 @@ export default function Header() {
           transition-all duration-300
           ${isScrolled 
             ? 'bg-white/70 rounded-none' 
-            : 'bg-white/30 rounded-full'
+            : 'bg-white/10 rounded-full'
           }
         `}>
           <Container>
@@ -56,40 +56,48 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-6">
             <Link
               href="/"
-              className={`font-medium text-gray-700 hover:text-purple-600 transition-colors ${
+              className={`font-medium hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 hover:bg-clip-text hover:text-transparent transition-colors ${
                 isActive("/")
-                  ? "text-purple-600 transition-colors"
-                  : ""
+                  ? "bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent"
+                  : pathname === "/" && !isScrolled
+                  ? "hover:text-white"
+                  : "text-gray-700"
               }`}
             >
               Home
             </Link>
             <Link
               href="/about"
-              className={`font-medium text-gray-700 hover:text-purple-600 transition-colors ${
+              className={`font-medium hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 hover:bg-clip-text hover:text-transparent transition-colors ${
                 isActive("/about")
-                  ? "text-purple-600 transition-colors"
-                  : ""
+                  ? "bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent"
+                  : pathname === "/" && !isScrolled
+                  ? "text-black hover:text-white"
+                  : "text-gray-700"
               }`}
             >
               About
             </Link>
             <Link
               href="/seller"
-              className={`font-medium text-gray-700 hover:text-purple-600 transition-colors ${
+              className={`font-medium hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 hover:bg-clip-text hover:text-transparent transition-colors ${
                 isActive("/seller")
-                  ? "text-purple-600 transition-colors"
-                  : ""
+                  ? "bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent"
+                  : pathname === "/" && !isScrolled
+                  ? "text-black hover:text-white"
+                  : "text-gray-700"
               }`}
             >
               Sellers
             </Link>
             <Link
               href="/customer"
-              className={`font-medium text-gray-700 hover:text-purple-600 transition-colors ${
+              className={`font-medium hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 hover:bg-clip-text hover:text-transparent transition-colors ${
                 isActive("/customer")
-                  ? "text-purple-600 transition-colors"
-                  : ""
+                  ? "bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent"
+                  : pathname === "/" && !isScrolled
+                  ? "text-black hover:text-white"
+                  : "text-gray-700"
               }`}
             >
               Customers
@@ -105,7 +113,7 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-gray-700 hover:text-purple-600 transition-colors"
+            className="md:hidden p-2 text-gray-700 hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 hover:bg-clip-text hover:text-transparent transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -118,10 +126,10 @@ export default function Header() {
             <div className="flex flex-col gap-4">
               <Link
                 href="/"
-                className={`hover:text-purple-600 transition-colors py-2 rounded-lg ${
+                className={`hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500 hover:bg-clip-text hover:text-transparent transition-colors py-2 rounded-lg ${
                   isActive("/")
-                    ? "bg-gradient-to-r from-purple-600 to-pink-500 text-white shadow-md px-3"
-                    : "text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+                    ? "bg-gradient-to-br from-purple-600 to-pink-500 text-white shadow-md px-3"
+                    : "text-gray-700 hover:bg-purple-50"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -129,10 +137,10 @@ export default function Header() {
               </Link>
               <Link
                 href="/about"
-                className={`hover:text-purple-600 transition-colors py-2 rounded-lg ${
+                className={`hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500 hover:bg-clip-text hover:text-transparent transition-colors py-2 rounded-lg ${
                   isActive("/about")
-                    ? "bg-gradient-to-r from-purple-600 to-pink-500 text-white shadow-md px-3"
-                    : "text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+                    ? "bg-gradient-to-br from-purple-600 to-pink-500 text-white shadow-md px-3"
+                    : "text-gray-700 hover:bg-purple-50"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -140,10 +148,10 @@ export default function Header() {
               </Link>
               <Link
                 href="/seller"
-                className={`hover:text-purple-600 transition-colors py-2 rounded-lg ${
+                className={`hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500 hover:bg-clip-text hover:text-transparent transition-colors py-2 rounded-lg ${
                   isActive("/seller")
-                    ? "bg-gradient-to-r from-purple-600 to-pink-500 text-white shadow-md px-3"
-                    : "text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+                    ? "bg-gradient-to-br from-purple-600 to-pink-500 text-white shadow-md px-3"
+                    : "text-gray-700 hover:bg-purple-50"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -151,10 +159,10 @@ export default function Header() {
               </Link>
               <Link
                 href="/customer"
-                className={`hover:text-purple-600 transition-colors py-2 rounded-lg ${
+                className={`hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500 hover:bg-clip-text hover:text-transparent transition-colors py-2 rounded-lg ${
                   isActive("/customer")
-                    ? "bg-gradient-to-r from-purple-600 to-pink-500 text-white shadow-md px-3"
-                    : "text-gray-700 hover:bg-purple-50 hover:text-purple-600"
+                    ? "bg-gradient-to-br from-purple-600 to-pink-500 text-white shadow-md px-3"
+                    : "text-gray-700 hover:bg-purple-50"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >

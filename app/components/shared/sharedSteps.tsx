@@ -37,7 +37,7 @@ export default function StepsDemo({ data }: StepsDemoProps) {
           <div className="hidden md:block">
             <div className="relative">
               {/* Connecting Line */}
-              <div className="absolute top-12 left-0 right-0 h-1 bg-gradient-to-r from-purple-200 via-purple-300 to-pink-200" />
+              <div className="absolute top-12 left-0 right-0 h-1 bg-gradient-to-br from-purple-200 via-purple-300 to-pink-200" />
               {/* Steps */}
               <div className="relative z-10 flex justify-between items-start gap-10">
                 {steps.map((step, index) => (

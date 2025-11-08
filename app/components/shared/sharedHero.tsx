@@ -37,7 +37,7 @@ const GenericHero = memo(({ data }: GenericHeroProps) => {
         </div>
       )}
 
-      <div className="max-w-7xl w-full px-6 ml-6 lg:ml-12 relative z-10">
+      <div className="max-w-6xl w-full px-6 ml-28 md:ml-40  relative z-10">
         <div className="max-w-3xl">
           {/* Main Heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6">
@@ -57,7 +57,7 @@ const GenericHero = memo(({ data }: GenericHeroProps) => {
           <div className="flex flex-wrap gap-4">
             <button
               onClick={data.primaryButton.onClick}
-              className="group bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-2"
+              className="group bg-gradient-to-br from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-2"
             >
               {data.primaryButton.text}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

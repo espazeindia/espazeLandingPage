@@ -63,14 +63,14 @@ export default function Products() {
                             everything from order management to fast, reliable deliveries.
                         </p>
                         <div className="mb-6">
-                            <a href="#" className="inline-block bg-gradient-to-r from-purple-600 to-pink-500 text-white px-6 py-3 text-base rounded-md hover:from-purple-700 hover:to-pink-600 transition-all">
+                            <a href="#" className="inline-block bg-gradient-to-br from-purple-600 to-pink-500 text-white px-6 py-3 text-base rounded-md hover:from-purple-700 hover:to-pink-600 transition-all">
                                 Learn more
                             </a>
                         </div>
                         <div className="flex items-center gap-3">
                             <button 
                                 onClick={handlePrev}
-                                className="h-9 w-9 flex items-center justify-center rounded-full border-2 border-purple-400 text-sm text-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500 hover:text-white hover:border-transparent transition-all"
+                                className="h-9 w-9 flex items-center justify-center rounded-full border-2 border-purple-400 text-sm text-purple-600 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 hover:text-white hover:border-transparent transition-all"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -78,7 +78,7 @@ export default function Products() {
                             </button>
                             <button 
                                 onClick={handleNext}
-                                className="h-9 w-9 flex items-center justify-center rounded-full border-2 border-purple-400 text-sm text-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-500 hover:text-white hover:border-transparent transition-all"
+                                className="h-9 w-9 flex items-center justify-center rounded-full border-2 border-purple-400 text-sm text-purple-600 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 hover:text-white hover:border-transparent transition-all"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -120,7 +120,7 @@ export default function Products() {
                                             />
                                         ) : (
                                             <div className="absolute inset-0 flex items-center justify-center">
-                                                <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent font-semibold text-lg">
+                                                <span className="bg-gradient-to-br from-purple-600 to-pink-500 bg-clip-text text-transparent font-semibold text-lg">
                                                     {card.title}
                                                 </span>
                                             </div>
@@ -128,7 +128,7 @@ export default function Products() {
                                     </div>
                                     <div className="mt-6 text-left w-full">
                                         <h3 className="text-2xl text-gray-900 font-bold leading-snug">{card.title}</h3>
-                                        <p className="text-sm bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent font-medium mt-2">{card.subtitle}</p>
+                                        <p className="text-sm bg-gradient-to-br from-purple-600 to-pink-500 bg-clip-text text-transparent font-medium mt-2">{card.subtitle}</p>
                                         <p className="text-sm text-gray-700 mt-3 leading-relaxed">{card.description}</p>
                                     </div>
                                     {card.link && (
@@ -138,7 +138,7 @@ export default function Products() {
                                                     e.stopPropagation();
                                                     handleCardClick(card.link);
                                                 }}
-                                                className="inline-block bg-gradient-to-r from-purple-600 to-pink-500 text-white px-6 py-3 text-sm rounded-lg hover:from-purple-700 hover:to-pink-600 transition-all font-medium shadow-md hover:shadow-lg"
+                                                className="inline-block bg-gradient-to-br from-purple-600 to-pink-500 text-white px-6 py-3 text-sm rounded-lg hover:from-purple-700 hover:to-pink-600 transition-all font-medium shadow-md hover:shadow-lg"
                                             >
                                                 Learn more →
                                             </button>

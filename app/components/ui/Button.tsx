@@ -27,7 +27,7 @@ export default function Button({
     secondary: "bg-white hover:bg-gray-50 text-purple-600 border-2 border-purple-600",
     outline: "bg-transparent hover:bg-purple-50 text-purple-600 border-2 border-purple-300",
     indigo: "bg-indigo-600 hover:bg-indigo-700 text-white",
-    gradient: "bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white"
+    gradient: "bg-gradient-to-br from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white"
   };
 
   const sizes = {

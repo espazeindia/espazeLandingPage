@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900 text-white py-12 overflow-hidden">
       {/* Decorative gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-pink-600/10 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-pink-600/10 pointer-events-none"></div>
       
       <Container>
         {/* Main Footer Content */}
@@ -23,14 +23,14 @@ export default function Footer() {
               className="flex-shrink-0"
             />
               <p className="text-gray-300 ml-2 mt-2 text-sm max-w-xs">
-                The platform for the <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-semibold">next generation</span> of commerce
+                The platform for the <span className="bg-gradient-to-br from-purple-400 to-pink-400 bg-clip-text text-transparent font-semibold">next generation</span> of commerce
               </p>
             
           </div>
 
           {/* Right: Contact Information */}
           <div className="text-left">
-            <h3 className="text-lg font-semibold mb-3 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Contact</h3>
+            <h3 className="text-lg font-semibold mb-3 bg-gradient-to-br from-purple-400 to-pink-400 bg-clip-text text-transparent">Contact</h3>
             <div className="space-y-2 text-gray-200">
               <div className="flex items-center gap-2 md:justify-start hover:text-pink-400 transition-colors">
                 <Mail className="w-4 h-4 text-pink-400" />

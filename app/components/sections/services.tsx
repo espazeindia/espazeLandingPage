@@ -71,7 +71,7 @@ export default function Services() {
                         </div>
                         <div>
                           <h3 className="text-2xl font-semibold text-gray-900">{service.title}</h3>
-                          <p className="text-sm bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent font-medium">{service.subtitle}</p>
+                          <p className="text-sm bg-gradient-to-br from-purple-600 to-pink-500 bg-clip-text text-transparent font-medium">{service.subtitle}</p>
                         </div>
                       </div>
                       <p className="text-gray-700 leading-relaxed">

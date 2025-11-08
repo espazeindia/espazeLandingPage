@@ -12,7 +12,7 @@ export default function AboutPage() {
           <section className="text-left mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               <span className="text-gray-900">About </span>
-              <span className="bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">Espaze</span>
+              <span className="bg-gradient-to-br from-purple-600 to-pink-500 bg-clip-text text-transparent">Espaze</span>
             </h1>
             <p className="text-xl text-gray-700 max-w-3xl">
               Empowering businesses and customers with seamless e-commerce solutions
@@ -39,7 +39,7 @@ export default function AboutPage() {
           {/* Our Mission Section */}
           <section className="mb-16 bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 rounded-2xl p-8 md:p-12 border border-purple-100">
             <h2 className="text-4xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-purple-700 to-pink-500 bg-clip-text text-transparent">Our Mission</span>
+              <span className="bg-gradient-to-br from-purple-700 to-pink-500 bg-clip-text text-transparent">Our Mission</span>
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed">
               To empower sellers, customers, and delivery partners on one seamless platform — simplifying everything 
@@ -159,7 +159,7 @@ export default function AboutPage() {
           </section>
 
           {/* CTA Section */}
-          <section className="text-left bg-gradient-to-r from-purple-600 via-purple-700 to-pink-600 rounded-2xl p-12 text-white shadow-xl">
+          <section className="text-left bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600 rounded-2xl p-12 text-white shadow-xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Transform Your Business?
             </h2>
