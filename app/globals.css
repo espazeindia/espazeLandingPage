@@ -2,122 +2,167 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --spacing: 0.25rem;
-  /* Espaze brand palette */
-  --espaze-primary: #4110a2; /* Primary / Dominant */
-  --espaze-mid: #7e50da; /* Primary (mid / gradient) */
-  --espaze-accent: #8c52ff; /* Accent / Bright */
-  --espaze-light: #b898fa; /* Light accent / neutral */
-  --espaze-chart1: #b974f4;
-  --espaze-chart2: #fd5934;
-  --espaze-chart3: #f59e0b;
-  --espaze-chart4: #0891b2;
-  --espaze-bg: #ffffff;
-  --espaze-text-dark: #111827;
-  --espaze-border: #e5e7eb;
-  /* compatibility: single espaze purple variable (primary) */
-  --espaze-purple: var(--espaze-primary);
+  --foreground: #1F2937;
+  --primary: #8B50F8;
+  --primary-hover: #7A3FE0;
+  --secondary: #B874FC;
+  --accent: #C898FD;
+  --light-purple: #F3EAFF;
+  --lighter-purple: #F9F5FF;
+  --spacing: 4px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  /* Custom purple color palette */
+  --color-purple-50: #F9F5FF;
+  --color-purple-100: #F3EAFF;
+  --color-purple-200: #E5D5FF;
+  --color-purple-300: #C898FD;
+  --color-purple-400: #B874FC;
+  --color-purple-500: #A560F9;
+  --color-purple-600: #8B50F8;
+  --color-purple-700: #7A3FE0;
+  --color-purple-800: #6832C7;
+  --color-purple-900: #5626A5;
+  
+  /* Custom indigo color palette (aligned with purple theme) */
+  --color-indigo-50: #F9F5FF;
+  --color-indigo-100: #F0E7FF;
+  --color-indigo-200: #E0D0FF;
+  --color-indigo-300: #C898FD;
+  --color-indigo-400: #B874FC;
+  --color-indigo-500: #A560F9;
+  --color-indigo-600: #8B50F8;
+  --color-indigo-700: #7A3FE0;
+  --color-indigo-800: #6832C7;
+  --color-indigo-900: #5626A5;
+  
+  /* Custom pink color palette (aligned with purple theme) */
+  --color-pink-50: #FDF4FF;
+  --color-pink-100: #FCE8FF;
+  --color-pink-200: #F9D1FF;
+  --color-pink-300: #F5A7FF;
+  --color-pink-400: #E86EFF;
+  --color-pink-500: #D947FF;
+  --color-pink-600: #C62EF5;
+  --color-pink-700: #A820D4;
+  --color-pink-800: #8A1BB0;
+  --color-pink-900: #6D1789;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-.px-6 {
-  padding-inline: calc(var(--spacing) * 6);
-  padding-block: 2rem;
-}
-
-/* helper vertical padding classes using the project's --spacing variable
-   - Tailwind's py-20 = 5rem  -> calc(var(--spacing) * 20) (0.25rem * 20 = 5rem)
-   - Tailwind's md:py-28 = 7rem -> calc(var(--spacing) * 28)
-*/
-/* Put custom utility classes into Tailwind's utilities layer so they don't get
-   overridden by generated utilities. This also allows Tailwind to include them
-   in the correct order and respect responsive breakpoints via @screen.
-*/
-@layer utilities {
-  .py-20 {
-    padding-block: calc(var(--spacing) * 20) !important;
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Espaze utility color helpers using the single espaze purple variable */
-@layer utilities {
-  .bg-espaze {
-    background-color: var(--espaze-purple) !important;
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
   }
-
-  .text-espaze {
-    color: var(--espaze-purple) !important;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
+}
 
-  .border-espaze {
-    border-color: var(--espaze-purple) !important;
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
   }
-
-  .bg-espaze-soft {
-    /* light, airy background using the espaze purple at low opacity */
-    background: linear-gradient(to bottom right, rgba(126,80,218,0.08), rgba(140,82,255,0.06));
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
+}
 
-  /* feature card hover border using the espaze color */
-  .feature-hover {
-    border-color: transparent;
-    transition: border-color 0.25s ease;
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
   }
-
-  .group.feature:hover .feature-hover {
-    border-color: var(--espaze-purple);
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
+}
 
-  /* Wider content container used on seller pages to reduce empty gutters
-     - Use a sensible max-width and increase at larger breakpoints. */
-  .container-wide {
-    max-width: 1100px;
-    width: 100%;
-    margin-inline: auto;
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
   }
-
-  @media (min-width: 1280px) {
-    .container-wide {
-      max-width: 1400px;
-    }
+  50% {
+    transform: translateY(-10px);
   }
+}
 
-  /* subtle dotted background for seller pages to reduce perceived empty space */
-  .seller-bg {
-    background-image: radial-gradient(rgba(65,16,162,0.02) 1px, transparent 1px);
-    background-size: 24px 24px;
-    background-repeat: repeat;
-  }
+/* Animation utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
 
-  /* full-page espaze background with subtle texture for seller pages (darkened) */
-  .espaze-site-bg {
-    background: linear-gradient(180deg, var(--espaze-primary), var(--espaze-mid));
-    position: relative;
-    overflow: hidden;
-    /* subtle overlay texture */
-    background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(180deg, var(--espaze-primary), var(--espaze-mid));
-    background-size: 28px 28px, auto;
-    background-repeat: repeat, no-repeat;
-    color: var(--espaze-text-dark);
-  }
+.animate-slide-in-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
 
-  /* helper to tone down background behind white cards so they stand out */
-  .card-lift {
-    background: rgba(255,255,255,0.96);
-    box-shadow: 0 8px 30px rgba(2,6,23,0.12);
-    border-radius: 12px;
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Intersection observer trigger */
+.reveal {
+  opacity: 0;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+
+/* Gradient backgrounds */
+.gradient-purple {
+  background: linear-gradient(135deg, #8B50F8 0%, #B874FC 100%);
+}
+
+.gradient-purple-light {
+  background: linear-gradient(135deg, #F3EAFF 0%, #F9F5FF 100%);
+}
+
+/* Override Tailwind's md:left-1/2 utility for the timeline so the line sits at ~36% on md+ */
+@media (min-width: 48rem) {
+  .md\:left-1\/2 {
+    left: 36% !important;
   }
 }
