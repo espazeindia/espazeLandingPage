@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Espaze",
+  title: "Espaze India",
   description: "The platform for the next generation of commerce",
 };
 
