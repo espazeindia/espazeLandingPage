@@ -36,7 +36,7 @@ export default function Header() {
           transition-all duration-300
           ${isScrolled 
             ? 'bg-white/70 rounded-none' 
-            : 'bg-white/10 rounded-full'
+            : 'bg-white/5 rounded-full'
           }
         `}>
           <Container>
