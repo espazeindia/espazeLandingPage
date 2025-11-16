@@ -24,7 +24,7 @@ export default function StepsDemo({ data }: StepsDemoProps) {
   return (
     <section className="relative bg-white py-20">
 
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
             <span className="block text-gray-900">{heading}</span>

@@ -37,8 +37,8 @@ const GenericHero = memo(({ data }: GenericHeroProps) => {
         </div>
       )}
 
-      <div className="max-w-6xl w-full px-6 ml-28 md:ml-40  relative z-10">
-        <div className="max-w-3xl">
+      <div className="max-w-[1400px] w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+        <div className="max-w-4xl">
           {/* Main Heading */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6">
             {data.heading}

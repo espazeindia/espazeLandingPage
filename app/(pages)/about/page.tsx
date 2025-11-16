@@ -7,7 +7,7 @@ export default function AboutPage() {
       <Header />
       
       <main className="pt-32 pb-16 min-h-screen">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
           {/* Hero Section */}
           <section className="text-left mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">

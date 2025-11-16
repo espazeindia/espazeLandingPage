@@ -29,7 +29,7 @@ export default function Header() {
       <div className={`${
         isScrolled 
           ? 'max-w-full' 
-          : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 md:mt-6'
+          : 'max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 mt-4 md:mt-6'
       }`}>
         <div className={`
           backdrop-blur-md border border-white/20 shadow-lg

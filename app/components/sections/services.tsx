@@ -53,7 +53,7 @@ export default function Services() {
             Our Services
           </h2>
         </ScrollReveal>
-        <div className="max-w-5xl mx-auto">
+        <div className="w-full">
           {services.map((service, index) => (
             <div key={index} className="mb-8 sticky top-20">
                 <Card 

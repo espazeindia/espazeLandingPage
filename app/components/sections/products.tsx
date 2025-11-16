@@ -50,7 +50,7 @@ export default function Products() {
     const currentCard = PRODUCT_CARDS[currentIndex];
 
     return (
-        <section className="max-w-6xl mx-auto px-6 py-12 pb-32">
+        <section className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 py-12 pb-32">
             <div className="flex flex-col md:flex-row items-start gap-12">
                 {/* Left Column: Heading & Description */}
                 <ScrollReveal direction="left" className="md:w-1/2 md:self-center">

@@ -54,7 +54,7 @@ FeatureCard.displayName = "FeatureCard";
 const GenericFeatures = memo(({ data }: GenericFeaturesProps) => {
   return (
     <section className="bg-gradient-to-br from-purple-50 via-pink-50 to-purple-50 py-20 md:py-28">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Heading */}
         <div className="text-left mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">

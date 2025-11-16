@@ -77,7 +77,7 @@ StepNumber.displayName = "StepNumber";
 
 export default function Steps() {
 	return (
-		<section className="max-w-6xl mx-auto px-6">
+		<section className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
       <div className="flex flex-col md:flex-row items-start gap-12">
         {/* Left Column: Heading & Features */}
         <ScrollReveal direction="left" className="md:w-1/2 md:self-center">
