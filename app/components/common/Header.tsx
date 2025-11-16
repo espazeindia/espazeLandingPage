@@ -44,7 +44,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 cursor-pointer">
             <Image 
-              src="/logoLight.png" 
+              src={pathname === "/" && !isScrolled ? "/logoDark.png" : "/logoLight.png"}
               alt="espaze" 
               width={100} 
               height={32}
@@ -60,7 +60,7 @@ export default function Header() {
                 isActive("/")
                   ? "bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent"
                   : pathname === "/" && !isScrolled
-                  ? "hover:text-white"
+                  ? "text-white"
                   : "text-gray-700"
               }`}
             >
@@ -72,7 +72,7 @@ export default function Header() {
                 isActive("/about")
                   ? "bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent"
                   : pathname === "/" && !isScrolled
-                  ? "text-black hover:text-white"
+                  ? "text-white"
                   : "text-gray-700"
               }`}
             >
@@ -84,7 +84,7 @@ export default function Header() {
                 isActive("/seller")
                   ? "bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent"
                   : pathname === "/" && !isScrolled
-                  ? "text-black hover:text-white"
+                  ? "text-white"
                   : "text-gray-700"
               }`}
             >
@@ -96,7 +96,7 @@ export default function Header() {
                 isActive("/customer")
                   ? "bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent"
                   : pathname === "/" && !isScrolled
-                  ? "text-black hover:text-white"
+                  ? "text-white"
                   : "text-gray-700"
               }`}
             >
