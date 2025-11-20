@@ -13,7 +13,7 @@ export default function Hero() {
           loop
           muted
           playsInline
-          src= "/espazeHero.mp4"
+          src= "/bbb.mp4"
           width={1800}
           height={1800}
         />

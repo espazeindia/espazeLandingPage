@@ -32,7 +32,7 @@ export default function Header() {
           : 'max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 mt-4 md:mt-6'
       }`}>
         <div className={`
-          backdrop-blur-md border border-white/20 shadow-lg
+          backdrop-blur-md border border-white/5 shadow-lg
           transition-all duration-300
           ${isScrolled 
             ? 'bg-white/70 rounded-none' 
