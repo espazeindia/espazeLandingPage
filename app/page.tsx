@@ -9,10 +9,10 @@ import Footer from "./components/common/footer";
 
 export default function Home() {
   return (
-    <div className=" text-gray-900 font-sans">
+    <div className=" text-gray-900 font-sans hideSideBar">
       <Header />
 
-      <div className="w-full space-y-16">
+      <div className="w-full space-y-16 overflow-hidden">
         <Hero />
         <ThreeSteps />
         <Services />
