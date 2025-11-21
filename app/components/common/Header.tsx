@@ -28,14 +28,14 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <div className={`${isScrolled
           ? 'max-w-full'
-          : 'max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 mt-4 md:mt-6'
+          : 'max-w-full sm:max-w-[1400px] sm:mx-auto sm:px-6 lg:px-12 sm:mt-6'
         }`}>
         <div className={`
           backdrop-blur-md border border-white/5 shadow-lg
           transition-all duration-300
           ${isScrolled
             ? 'bg-white/70 rounded-none'
-            : 'bg-white/5 rounded-full'
+            : 'bg-white/5 sm:bg-white/5 rounded-none sm:rounded-full'
           }
         `}>
           <Container>
