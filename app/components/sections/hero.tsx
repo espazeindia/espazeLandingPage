@@ -39,7 +39,7 @@ export default function Hero() {
           </div>
 
           {/* Main Heading */}
-          <h1 className=" text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-slide-in-left">
+          <h1 className=" text-4xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-slide-in-left">
             <span className="text-white">Smart warehousing.</span>
             <br />
             <span className="text-white">Instant delivery.</span>
