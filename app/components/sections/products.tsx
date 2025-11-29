@@ -24,12 +24,14 @@ const PRODUCT_CARDS = [
         title: "Delivery Partner App",
         subtitle: "For Delivery Personnel",
         description: "Streamlined delivery management for our delivery partners. Get route optimization, real-time order updates, and efficient delivery tracking tools to ensure timely deliveries.",
-        link: null
+        link: "/deliveryPartner"
     }
 ];
 
 export default function Products() {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [touchStart, setTouchStart] = useState(0);
+    const [touchEnd, setTouchEnd] = useState(0);
     const router = useRouter();
     const totalSlides = PRODUCT_CARDS.length;
 
@@ -44,6 +46,27 @@ export default function Products() {
     const handleCardClick = (link: string | null) => {
         if (link) {
             router.push(link);
+        }
+    };
+
+    // Touch handlers for swipe functionality
+    const handleTouchStart = (e: React.TouchEvent) => {
+        setTouchStart(e.targetTouches[0].clientX);
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const handleTouchEnd = () => {
+        if (touchStart - touchEnd > 75) {
+            // Swiped left, go to next
+            handleNext();
+        }
+        if (touchStart - touchEnd < -75) {
+            // Swiped right, go to previous
+            handlePrev();
         }
     };
 
@@ -95,6 +118,9 @@ export default function Products() {
                         style={{
                             transform: `translateX(calc(-${currentIndex * 80}% - ${currentIndex * 24}px))`
                         }}
+                        onTouchStart={handleTouchStart}
+                        onTouchMove={handleTouchMove}
+                        onTouchEnd={handleTouchEnd}
                     >
                         {PRODUCT_CARDS.map((card, index) => (
                             <div
@@ -109,21 +135,13 @@ export default function Products() {
                                         }`}
                                 >
                                     <div className="relative w-full h-48 bg-linear-to-br from-purple-50 to-pink-50 rounded-lg shadow-sm overflow-hidden">
-                                        {(card.id === 'seller' || card.id === 'customer') ? (
-                                            <Image
-                                                src={card.id === 'seller' ? '/seller.png' : '/customer.png'}
-                                                alt={card.title}
-                                                fill
-                                                className="object-cover"
-                                                sizes="(max-width: 768px) 100vw, 50vw"
-                                            />
-                                        ) : (
-                                            <div className="absolute inset-0 flex items-center justify-center">
-                                                <span className="bg-linear-to-br from-purple-600 to-pink-500 bg-clip-text text-transparent font-semibold text-lg">
-                                                    {card.title}
-                                                </span>
-                                            </div>
-                                        )}
+                                        <Image
+                                            src={card.id === 'seller' ? '/seller.png' : card.id === 'customer' ? '/customer.png' : '/deliveryPartner.png'}
+                                            alt={card.title}
+                                            fill
+                                            className="object-cover"
+                                            sizes="(max-width: 768px) 100vw, 50vw"
+                                        />
                                     </div>
                                     <div className="mt-6 text-left w-full">
                                         <h3 className="text-2xl text-gray-900 font-bold leading-snug">{card.title}</h3>
