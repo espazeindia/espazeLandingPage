@@ -15,8 +15,8 @@ export default function Hero() {
           muted
           playsInline
           src= "/bbb.mp4"
-          width={1800}
-          height={1800}
+          width={1000}
+          height={100}
         />
         
         
@@ -32,7 +32,7 @@ export default function Hero() {
       </div> */}
 
       <div className="max-w-6xl pl-6 pr-6 md:px-6 py-20  sm:ml-28 md:py-32 relative z-10">
-        <div className="max-w-3xl mt-12">
+        <div className="max-w-3xl mt-50">
           {/* Trust Badge */}
           <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm mb-6 animate-fade-in border-2 border-purple-300 bg-linear-to-br from-purple-100 to-pink-100">
             <TrendingUp className="w-4 h-4 text-purple-600" />
