@@ -102,17 +102,17 @@ export default function Steps() {
               <span className="text-5xl sm:text-6xl lg:text-4xl 2xl:text-5xl">3 easy steps</span>
             </h2>
 
-            <p className="text-black mb-4 lg:text-sm 2xl:text-base">
+            <p className="text-black mb-4 lg:text-sm 2xl:text-base hidden lg:block">
               Espaze simplifies e-commerce logistics by bringing sellers, warehouses, and customers
               together on one intelligent platform.
             </p>
 
-            <p className="text-gray-700 mb-6">
+            <p className="text-gray-700 mb-6 hidden lg:block">
               From product storage to instant doorstep delivery — everything works in perfect sync to
               save time, space, and cost.
             </p>
 
-            <ul className="space-y-3" aria-label="Key features">
+            <ul className="space-y-3 hidden lg:block" aria-label="Key features">
               {FEATURES.map((feature) => (
                 <FeatureItem key={feature} text={feature} />
               ))}
@@ -121,7 +121,7 @@ export default function Steps() {
         </ScrollReveal>
 
         {/* Right Column: Timeline */}
-        <ScrollReveal direction="right" className="w-full lg:w-8/12 2xl:w-1/2 flex items-center justify-center">
+        <ScrollReveal direction="right" className="w-full lg:w-8/12 2xl:w-1/2 flex items-center justify-center px-4 lg:px-0">
           <div className="relative w-full max-w-2xl">
             {/* Vertical Dotted Line */}
             <div
