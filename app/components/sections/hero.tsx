@@ -14,12 +14,12 @@ export default function Hero() {
           loop
           muted
           playsInline
-          src= "/bbb.mp4"
+          src="/bbb.mp4"
           width={1000}
           height={100}
         />
-        
-        
+
+
         <div className="absolute inset-0 bg-purple-900/20 shadow" />
       </div>
 
@@ -32,7 +32,19 @@ export default function Hero() {
       </div> */}
 
       <div className="max-w-6xl pl-6 pr-6 md:px-6 py-20  sm:ml-28 md:py-32 relative z-10">
-        <div className="max-w-3xl mt-50">
+        <div className="max-w-3xl mt-8 md:mt-36">
+          {/* Mobile video - only visible on mobile, positioned at top */}
+          <div className="md:hidden mb-12 rounded-2xl overflow-hidden shadow-2xl">
+            <video
+              className="w-full h-auto"
+              autoPlay
+              loop
+              muted
+              playsInline
+              src="/bbb.mp4"
+            />
+          </div>
+
           {/* Trust Badge */}
           <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm mb-6 animate-fade-in border-2 border-purple-300 bg-linear-to-br from-purple-100 to-pink-100">
             <TrendingUp className="w-4 h-4 text-purple-600" />
@@ -65,18 +77,6 @@ export default function Hero() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-          </div>
-
-          {/* Mobile video - only visible on mobile, positioned after buttons */}
-          <div className="md:hidden mt-8 rounded-2xl overflow-hidden shadow-2xl border-2 border-purple-400/30">
-            <video
-              className="w-full h-auto"
-              autoPlay
-              loop
-              muted
-              playsInline
-              src="/bbb.mp4"
-            />
           </div>
         </div>
       </div>
