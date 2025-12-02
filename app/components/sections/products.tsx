@@ -25,7 +25,22 @@ const PRODUCT_CARDS = [
         subtitle: "For Delivery Personnel",
         description: "Streamlined delivery management for our delivery partners. Get route optimization, real-time order updates, and efficient delivery tracking tools to ensure timely deliveries.",
         link: "/deliveryPartner"
-    }
+    },
+    {
+        id: "warehousing",
+        title: "Cloud Warehousing",
+        subtitle: "Store smart, scale faster",
+        description: "Espaze provides cloud-based virtual warehouses, helping sellers manage storage flexibly without physical overheads or expensive infrastructure.",
+        link: "/cloudwarehousing"
+    },
+    {
+        id: "inventory",
+        title: "Smart Inventory Management",
+        subtitle: "Track everything, effortlessly",
+        description: "Monitor and sync your inventory across warehouses and platforms in real time with Espaze's intelligent management dashboard.",
+        link: "/inventory"
+    },
+    
 ];
 
 export default function Products() {
@@ -78,8 +93,8 @@ export default function Products() {
                 {/* Left Column: Heading & Description */}
                 <ScrollReveal direction="left" className="md:w-1/2 md:self-center">
                     <div>
-                        <h2 className="text-4xl sm:text-5xl font-semibold leading-tight mb-6 text-gray-900">
-                            <span className="text-5xl sm:text-6xl">Our Products</span>
+                        <h2 className="text-xl sm:text-3xl font-semibold leading-tight mb-6 text-gray-900">
+                            <span className="text-2xl sm:text-5xl">Our Products and Services</span>
                         </h2>
                         <p className="text-gray-900 mb-6">
                             At Espaze, we empower sellers, customers, and delivery partners on one seamless platform — simplifying
@@ -136,7 +151,14 @@ export default function Products() {
                                 >
                                     <div className="relative w-full h-48 bg-linear-to-br from-purple-50 to-pink-50 rounded-lg shadow-sm overflow-hidden">
                                         <Image
-                                            src={card.id === 'seller' ? '/seller.png' : card.id === 'customer' ? '/customer.png' : '/deliveryPartner.png'}
+                                            src={
+                                                card.id === 'seller' ? '/seller.png' : 
+                                                card.id === 'customer' ? '/customer.png' : 
+                                                card.id === 'delivery' ? '/deliveryPartner.png' :
+                                                card.id === 'warehousing' ? '/cloudwarehousing.jpg' :
+                                                card.id === 'inventory' ? '/inventory.jpg' :
+                                                '/deliveryPartner.png'
+                                            }
                                             alt={card.title}
                                             fill
                                             className="object-cover"
@@ -148,7 +170,7 @@ export default function Products() {
                                         <p className="text-sm bg-linear-to-br from-purple-600 to-pink-500 bg-clip-text text-transparent font-medium mt-2">{card.subtitle}</p>
                                         <p className="text-sm text-gray-700 mt-3 leading-relaxed">{card.description}</p>
                                     </div>
-                                    {card.link && (
+                                    {(card.id === 'seller' || card.id === 'customer') && (
                                         <div className="mt-4 w-full">
                                             <button
                                                 onClick={(e) => {
@@ -161,9 +183,9 @@ export default function Products() {
                                             </button>
                                         </div>
                                     )}
-                                    {!card.link && (
+                                    {card.id !== 'seller' && card.id !== 'customer' && (
                                         <div className="mt-4 w-full">
-                                            <p className="text-sm text-gray-500 italic">Coming soon for our delivery partners</p>
+                                            <p className="text-sm text-gray-500 italic">Coming soon</p>
                                         </div>
                                     )}
                                 </div>

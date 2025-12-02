@@ -15,7 +15,7 @@ export default function Home() {
       <div className="w-full space-y-16 overflow-hidden">
         <Hero />
         <ThreeSteps />
-        <Services />
+        {/* <Services /> */}
         <Products />
       </div>
 
