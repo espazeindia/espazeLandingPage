@@ -14,12 +14,10 @@ export default function Hero() {
           loop
           muted
           playsInline
-          src="/bbb.mp4"
+          src="/bbb.hevc.mp4"
           width={1000}
           height={100}
         />
-
-
         <div className="absolute inset-0 bg-purple-900/20 shadow" />
       </div>
 
