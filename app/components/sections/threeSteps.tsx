@@ -19,7 +19,7 @@ const STEPS: Step[] = [
   {
     id: "02",
     title: "Smart Storage",
-    body: "Products are distributed across nearby cloud-connected warehouses for faster access and fulfillment.",
+    body: "Smart, region-based storage across cloud-connected warehouses, allowing sellers to select exactly where their products are available.",
   },
   {
     id: "03",
